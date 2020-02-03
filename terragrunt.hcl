@@ -10,10 +10,6 @@ terraform {
       "${get_parent_terragrunt_dir()}/${path_relative_to_include()}/${find_in_parent_folders("group.tfvars", "account.tfvars")}"]
   }
 
-  backend "local" {
-    path = "/Users/Lavanya/insight"
-  }
-
 }
 
 remote_state {
