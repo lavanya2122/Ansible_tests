@@ -4,8 +4,8 @@
 
 This is the second iteration of an automated deployment for running nodes and supporting infrastructure on the ICON Blockchain. 
 
-## To Use 
-
+### To Use 
+---
 1. ##### Export AWS keys to environment variables or profile 
 	- Visit [this link](https://www.notion.so/insightbxplanning/AWS-Keys-Tutorial-175fa12e9b5b43509235a97fca275653) for more information 
 2. ##### Install prerequisites 
@@ -27,7 +27,7 @@ This is the second iteration of an automated deployment for running nodes and su
         - Change `config.yaml.examle` to `config.yaml` and fill out choices 
         - Run `make configs-from-config`
     - **Options #3** - Fill out lower level configs manually 
-        - There are five files 
+        - There are five files generated from above options. Create them per above then edit manually. 
             - `global.yaml`
                 - Information about network and general setup  
             - `secrets.yaml`

@@ -1,5 +1,5 @@
 terraform {
-  source = "github.com/insight-infrastructure/terraform-aws-icon-prep-basic.git?ref=fix-az-order"
+  source = "github.com/insight-infrastructure/terraform-aws-icon-prep-basic.git?ref=master"
 }
 
 include {
@@ -57,6 +57,7 @@ inputs = {
 
   playbook_file_path = "${local.ansible}/prep-basic.yml"
   roles_dir = "${local.ansible}/roles"
+  playbook_vars = local.nodes["${local.name}"]["additional_playbook_vars"]
 
   tags = {}
 }
