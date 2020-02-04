@@ -23,19 +23,17 @@ dependency "label" {
 
 inputs = {
   // These five values are mandatory.  Fill them out per your teams information
-<<<<<<< Updated upstream
   organization_name = local.registration["organization_name"]
   organization_country = local.registration["organization_country"] # This needs to be three letter country code
   organization_email = local.registration["organization_email"]
   organization_city = local.registration["organization_city"]
   organization_website = local.registration["organization_website"]
-=======
-  organization_name = "Insight-Lavanya"
-  organization_country = "USA" # This needs to be three letter country code
-  organization_email = "insight.icon.prep@gmail.com"
-  organization_city = "San Francisco"
-  organization_website = "https://insight-icon.net"
->>>>>>> Stashed changes
+
+  #organization_name = "Insight-Lavanya"
+  #organization_country = "USA" # This needs to be three letter country code
+  #organization_email = "insight.icon.prep@gmail.com"
+  #organization_city = "San Francisco"
+  #organization_website = "https://insight-icon.net"
 
 // All the logos are complete paths to the image on your local drive
   logo_256 = local.registration["logo_256"]
