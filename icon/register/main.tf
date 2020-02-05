@@ -178,6 +178,6 @@ EOF
     build_always = timestamp()
   }
 
-  depends_on = [aws_s3_bucket_object.details, null_resource.write_cfgs]
+  depends_on = [aws_s3_bucket_object.details, local_file.preptools_config, local_file.registration]
 }
 
