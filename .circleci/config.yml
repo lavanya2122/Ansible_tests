@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: insightinfrastructure/terragrunt-aws-ci:latest
+      - image: insightinfrastructure/terragrunt-aws-ci:v0.3.0
     steps:
       - checkout
       - run:
@@ -18,7 +18,7 @@ jobs:
             wget https://prep-registration-helped-reindeer.s3.amazonaws.com/ci/config.yaml
             wget https://prep-registration-helped-reindeer.s3.amazonaws.com/ci/keystore
             make configs-from-config 
-            make eip-register
+          # make eip-register
             make apply-network
             make apply-prep-module-vpc
             ./test/test-prep-module.sh
@@ -27,10 +27,10 @@ jobs:
           command: |
             make destroy-prep-module-vpc
             make destroy-network
-      - run:
-          name: Destroy on failure
-          command: |
-            wget https://github.com/gruntwork-io/cloud-nuke/releases/download/v0.1.13/cloud-nuke_linux_amd64 -O ./cloud-nuke
-            chmod +x ./cloud-nuke
-            ./cloud-nuke aws --force 
-          when: on_fail
+      #- run:
+      #   name: Destroy on failure
+      #   command: |
+      #     wget https://github.com/gruntwork-io/cloud-nuke/releases/download/v0.1.13/cloud-nuke_linux_amd64 -O ./cloud-nuke
+      #     chmod +x ./cloud-nuke
+      #      ./cloud-nuke aws --force 
+      #    when: on_fail
