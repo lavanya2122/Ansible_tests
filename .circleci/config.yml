@@ -27,10 +27,10 @@ jobs:
           command: |
             make destroy-prep-module-vpc
             make destroy-network
-      #- run:
-      #   name: Destroy on failure
-      #   command: |
-      #     wget https://github.com/gruntwork-io/cloud-nuke/releases/download/v0.1.13/cloud-nuke_linux_amd64 -O ./cloud-nuke
-      #     chmod +x ./cloud-nuke
-      #      ./cloud-nuke aws --force 
-      #    when: on_fail
+      - run:
+          name: Destroy on failure
+          command: |
+            wget https://github.com/gruntwork-io/cloud-nuke/releases/download/v0.1.13/cloud-nuke_linux_amd64 -O ./cloud-nuke
+            chmod +x ./cloud-nuke
+            ./cloud-nuke aws --force 
+          when: on_fail
