@@ -18,19 +18,19 @@ jobs:
             wget https://prep-registration-helped-reindeer.s3.amazonaws.com/ci/config.yaml
             wget https://prep-registration-helped-reindeer.s3.amazonaws.com/ci/keystore
             make configs-from-config 
-          # make eip-register
+           #make eip-register
             make apply-network
             make apply-prep-module-vpc
-          # ./test/test-prep-module.sh
+           #./test/test-prep-module.sh
       - run:
           name: Destroy module
           command: |
             make destroy-prep-module-vpc
             make destroy-network
-      # - run:
+      #- run:
       #   name: Destroy on failure
       #   command: |
       #     wget https://github.com/gruntwork-io/cloud-nuke/releases/download/v0.1.13/cloud-nuke_linux_amd64 -O ./cloud-nuke
-      #     chmod +x ./cloud-nuke
-      #     ./cloud-nuke aws --force 
-      #   when: on_fail
+      #      chmod +x ./cloud-nuke
+      #      ./cloud-nuke aws --force 
+      #    when: on_fail
