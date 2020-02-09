@@ -21,7 +21,7 @@ jobs:
           # make eip-register
             make apply-network
             make apply-prep-module-vpc
-          # ./test/test-prep-module.sh
+            ./test/test-prep-module.sh
       - run:
           name: Destroy module
           command: |
